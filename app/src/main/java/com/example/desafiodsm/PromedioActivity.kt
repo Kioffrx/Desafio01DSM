@@ -1,13 +1,13 @@
-package com.example.desafio01dsm
+package com.example.desafiodsm
 
-import androidx.core.content.ContextCompat
-import java.text.DecimalFormat
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
+import java.text.DecimalFormat
 
 class PromedioActivity : AppCompatActivity() {
 
@@ -18,6 +18,17 @@ class PromedioActivity : AppCompatActivity() {
     private lateinit var etNota4: EditText
     private lateinit var etNota5: EditText
     private lateinit var tvResultado: TextView
+
+    private val notaMinima = 0.0
+    private val notaMaxima = 10.0
+    private val formatoDecimal = DecimalFormat("#.##")
+    private val promedioAprobatorio = 6.0
+
+    private val ponderacion1 = 0.20
+    private val ponderacion2 = 0.20
+    private val ponderacion3 = 0.20
+    private val ponderacion4 = 0.15
+    private val ponderacion5 = 0.25
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,7 +43,7 @@ class PromedioActivity : AppCompatActivity() {
         tvResultado = findViewById(R.id.tvResultadoPromedio)
 
         findViewById<Button>(R.id.btnCalcularPromedio).setOnClickListener {
-            validarCampos()
+            calcularPromedio()
         }
 
         findViewById<Button>(R.id.btnRegresarMenu1).setOnClickListener {
@@ -40,18 +51,6 @@ class PromedioActivity : AppCompatActivity() {
             finish()
         }
     }
-
-    private val notaMinima = 0.0
-    private val notaMaxima = 10.0
-
-    private val formatoDecimal = DecimalFormat("#.##")
-    private val promedioAprobatorio = 6.0
-
-    private val ponderacion1 = 0.20
-    private val ponderacion2 = 0.20
-    private val ponderacion3 = 0.20
-    private val ponderacion4 = 0.15
-    private val ponderacion5 = 0.25
 
     private fun calcularPromedio() {
         val nombre = etNombre.text.toString().trim()
