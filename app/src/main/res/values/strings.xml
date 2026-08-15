@@ -15,4 +15,7 @@
     <string name="promedio_resultado">Promedio final: %1$s</string>
     <string name="promedio_aprobado">%1$s ha APROBADO</string>
     <string name="promedio_reprobado">%1$s ha REPROBADO</string>
+    <string name="notificacion_canal_id">canal_promedio</string>
+    <string name="notificacion_canal_nombre">Resultados de promedio</string>
+    <string name="notificacion_titulo">Resultado del promedio</string>
 </resources>
