@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">DesafioDSM</string>
+    <!-- Ejercicio 1: Promedio del estudiante -->
+    <string name="promedio_titulo">Promedio del Estudiante</string>
+    <string name="promedio_hint_nombre">Nombre del estudiante</string>
+    <string name="promedio_nota1">Parcial 1 (20%)</string>
+    <string name="promedio_nota2">Parcial 2 (20%)</string>
+    <string name="promedio_nota3">Parcial 3 (20%)</string>
+    <string name="promedio_nota4">Tareas (15%)</string>
+    <string name="promedio_nota5">Examen Final (25%)</string>
+    <string name="promedio_btn_calcular">Calcular Promedio</string>
+    <string name="promedio_error_vacio">Este campo es obligatorio</string>
+    <string name="promedio_error_rango">La nota debe estar entre 0 y 10</string>
+    <string name="promedio_error_nombre">Ingrese el nombre del estudiante</string>
+    <string name="promedio_resultado">Promedio final: %1$s</string>
+    <string name="promedio_aprobado">%1$s ha APROBADO</string>
+    <string name="promedio_reprobado">%1$s ha REPROBADO</string>
 </resources>
