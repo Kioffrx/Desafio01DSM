@@ -2,4 +2,19 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="primary">#4A6FA5</color>
+    <color name="primary_dark">#33507A</color>
+    <color name="accent">#F2A541</color>
+    <color name="background">#F5F7FA</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#616161</color>
+
+    <color name="resultado_aprobado">#2E7D32</color>
+    <color name="resultado_reprobado">#C62828</color>
+
+    <color name="salario_bruto_color">#2E7D32</color>
+    <color name="salario_neto_color">#1B5E20</color>
+    <color name="salario_descuento_color">#C62828</color>
 </resources>

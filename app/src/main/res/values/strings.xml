@@ -1,5 +1,14 @@
 <resources>
     <string name="app_name">DesafioDSM</string>
+
+    <!-- Menú principal -->
+    <string name="menu_titulo">Primer Desafío Práctico</string>
+    <string name="menu_subtitulo">Selecciona un ejercicio</string>
+    <string name="btn_ejercicio1">Ejercicio 1: Promedio</string>
+    <string name="btn_ejercicio2">Ejercicio 2: Salario</string>
+    <string name="btn_ejercicio3">Ejercicio 3: Calculadora</string>
+    <string name="btn_regresar_menu">Regresar al menú</string>
+
     <!-- Ejercicio 1: Promedio del estudiante -->
     <string name="promedio_titulo">Promedio del Estudiante</string>
     <string name="promedio_hint_nombre">Nombre del estudiante</string>
