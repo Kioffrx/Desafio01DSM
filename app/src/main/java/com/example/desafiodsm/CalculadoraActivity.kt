@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import java.text.DecimalFormat
 import kotlin.math.pow
 import kotlin.math.sqrt
+import android.content.Intent
 
 class CalculadoraActivity : AppCompatActivity() {
 
@@ -16,6 +17,8 @@ class CalculadoraActivity : AppCompatActivity() {
     private lateinit var btnOperar: Button
     private lateinit var tvResultadoCalc: TextView
     private lateinit var btnHistorial: Button
+
+    private lateinit var btnRegresarMenu3: Button
 
     private val NOMBRE_ARCHIVO = "historial.txt"
 
@@ -29,6 +32,7 @@ class CalculadoraActivity : AppCompatActivity() {
         btnOperar = findViewById(R.id.btnOperar)
         tvResultadoCalc = findViewById(R.id.tvResultadoCalc)
         btnHistorial = findViewById(R.id.btnHistorial)
+        btnRegresarMenu3 = findViewById(R.id.btnRegresarMenu3)
 
         val adapter = ArrayAdapter.createFromResource(
             this, R.array.operaciones, android.R.layout.simple_spinner_item
@@ -38,6 +42,10 @@ class CalculadoraActivity : AppCompatActivity() {
 
         btnOperar.setOnClickListener { procesarOperacion() }
         btnHistorial.setOnClickListener { mostrarHistorial() }
+        btnRegresarMenu3.setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
+        }
 
     }
     private fun operar(op: String, n1: Double, n2: Double): Double? {
