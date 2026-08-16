@@ -101,5 +101,31 @@ class CalculadoraActivity : AppCompatActivity() {
         tvResultadoCalc.text = linea
         guardarEnHistorial(linea)
     }
+    private fun guardarEnHistorial(linea: String) {
+        try {
+            openFileOutput(NOMBRE_ARCHIVO, MODE_APPEND).use { salida ->
+                salida.write("$linea\n".toByteArray())
+            }
+        } catch (e: Exception) {
+            Toast.makeText(this, "Error al guardar historial: ${e.message}", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun mostrarHistorial() {
+        try {
+            val contenido = openFileInput(NOMBRE_ARCHIVO).bufferedReader().use { it.readText() }
+            if (contenido.isEmpty()) {
+                Toast.makeText(this, "Aún no hay historial", Toast.LENGTH_SHORT).show()
+                return
+            }
+            AlertDialog.Builder(this)
+                .setTitle(getString(R.string.btn_ver_historial))
+                .setMessage(contenido)
+                .setPositiveButton("Cerrar", null)
+                .show()
+        } catch (e: Exception) {
+            Toast.makeText(this, "Aún no hay historial", Toast.LENGTH_SHORT).show()
+        }
+    }
 
 }
