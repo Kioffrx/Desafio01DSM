@@ -22,7 +22,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         btnEjercicio2.setOnClickListener {
-            Toast.makeText(this, "Ejercicio 2 aún no implementado", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, SalarioActivity::class.java)
+            startActivity(intent)
         }
 
         btnEjercicio3.setOnClickListener {
