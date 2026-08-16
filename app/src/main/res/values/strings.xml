@@ -49,6 +49,8 @@
     <string name="hint_num1">Número 1</string>
     <string name="hint_num2">Número 2 (no aplica en raíz cuadrada)</string>
     <string name="btn_operar">Calcular</string>
+    <string name="error_campo_vacio">Este campo es obligatorio</string>
+    <string name="error_nota_invalida">Ingrese un número válido</string>
     <string name="error_division_cero">No se puede dividir entre cero</string>
     <string name="error_raiz_negativa">No se puede calcular raíz de un número negativo</string>
     <string name="btn_ver_historial">Ver Historial</string>

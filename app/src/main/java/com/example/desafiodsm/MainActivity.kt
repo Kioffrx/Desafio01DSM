@@ -3,7 +3,6 @@ package com.example.desafiodsm
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
@@ -27,7 +26,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         btnEjercicio3.setOnClickListener {
-            Toast.makeText(this, "Ejercicio 3 aún no implementado", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, CalculadoraActivity::class.java)
+            startActivity(intent)
         }
     }
 }
