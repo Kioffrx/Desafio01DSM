@@ -16,6 +16,7 @@
         android:theme="@style/Theme.DesafioDSM">
         <activity android:name=".PromedioActivity" android:exported="false" />
         <activity android:name=".SalarioActivity" android:exported="false" />
+        <activity android:name=".CalculadoraActivity" android:exported="false" />
 
         <activity
             android:name=".MainActivity"
