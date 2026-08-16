@@ -109,7 +109,11 @@ class CalculadoraActivity : AppCompatActivity() {
                 salida.write("$linea\n".toByteArray())
             }
         } catch (e: Exception) {
-            Toast.makeText(this, "Error al guardar historial: ${e.message}", Toast.LENGTH_SHORT).show()
+            Toast.makeText(
+                this,
+                getString(R.string.historial_error_guardar, e.message ?: ""),
+                Toast.LENGTH_SHORT
+            ).show()
         }
     }
 
@@ -117,16 +121,16 @@ class CalculadoraActivity : AppCompatActivity() {
         try {
             val contenido = openFileInput(NOMBRE_ARCHIVO).bufferedReader().use { it.readText() }
             if (contenido.isEmpty()) {
-                Toast.makeText(this, "Aún no hay historial", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.historial_vacio), Toast.LENGTH_SHORT).show()
                 return
             }
             AlertDialog.Builder(this)
-                .setTitle(getString(R.string.btn_ver_historial))
+                .setTitle(getString(R.string.historial_titulo_dialogo))
                 .setMessage(contenido)
-                .setPositiveButton("Cerrar", null)
+                .setPositiveButton(getString(R.string.btn_cerrar), null)
                 .show()
         } catch (e: Exception) {
-            Toast.makeText(this, "Aún no hay historial", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, getString(R.string.historial_vacio), Toast.LENGTH_SHORT).show()
         }
     }
 
