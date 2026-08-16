@@ -10,6 +10,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import java.text.DecimalFormat
 
 class SalarioActivity : AppCompatActivity() {
 
@@ -22,6 +23,11 @@ class SalarioActivity : AppCompatActivity() {
     private lateinit var tvIsss: TextView
     private lateinit var tvTotalDescuentos: TextView
     private lateinit var tvSalarioNeto: TextView
+
+    private val formato = DecimalFormat("#,##0.00")
+    private val porcentajeAfp = 0.0725
+    private val porcentajeIsss = 0.03
+    private val topeIsss = 1000.0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,7 +44,7 @@ class SalarioActivity : AppCompatActivity() {
         tvSalarioNeto = findViewById(R.id.tvSalarioNeto)
 
         findViewById<Button>(R.id.btnCalcularSalario).setOnClickListener {
-            validarCampos()
+            calcularDescuentos()
         }
 
         findViewById<Button>(R.id.btnRegresarMenu2).setOnClickListener {
@@ -47,7 +53,7 @@ class SalarioActivity : AppCompatActivity() {
         }
     }
 
-    private fun validarCampos() {
+    private fun calcularDescuentos() {
         val nombre = etNombreEmpleado.text.toString().trim()
         if (nombre.isEmpty()) {
             etNombreEmpleado.error = getString(R.string.salario_error_nombre)
@@ -69,7 +75,33 @@ class SalarioActivity : AppCompatActivity() {
             return
         }
 
-        tvTituloResultado.text = "Salario válido: $salarioBase"
+        val renta = calcularRenta(salarioBase)
+        val afp = salarioBase * porcentajeAfp
+        val baseIsss = if (salarioBase > topeIsss) topeIsss else salarioBase
+        val isss = baseIsss * porcentajeIsss
+
+        val totalDescuentos = renta + afp + isss
+        val salarioNeto = salarioBase - totalDescuentos
+
+        tvTituloResultado.text = getString(R.string.salario_resultado_titulo, nombre)
+        tvSalarioBruto.text = getString(R.string.salario_bruto, formato.format(salarioBase))
+        tvRenta.text = getString(R.string.salario_renta, formato.format(renta))
+        tvAfp.text = getString(R.string.salario_afp, formato.format(afp))
+        tvIsss.text = getString(R.string.salario_isss, formato.format(isss))
+        tvTotalDescuentos.text = getString(R.string.salario_total_descuentos, formato.format(totalDescuentos))
+        tvSalarioNeto.text = getString(R.string.salario_neto, formato.format(salarioNeto))
+    }
+
+    /**
+     * Calcula el descuento de Renta (ISR) según la tabla de tramos.
+     */
+    private fun calcularRenta(salario: Double): Double {
+        return when {
+            salario <= 472.00 -> 0.0
+            salario <= 895.24 -> (salario - 472.00) * 0.10 + 17.67
+            salario <= 2038.10 -> (salario - 895.24) * 0.20 + 60.00
+            else -> (salario - 2038.10) * 0.30 + 288.57
+        }
     }
 
     private fun vibrarDispositivo() {
