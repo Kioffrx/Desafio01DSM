@@ -38,5 +38,28 @@ class CalculadoraActivity : AppCompatActivity() {
         btnOperar.setOnClickListener { procesarOperacion() }
         btnHistorial.setOnClickListener { mostrarHistorial() }
     }
+    private fun operar(op: String, n1: Double, n2: Double): Double? {
+        return when (op) {
+            "Suma" -> n1 + n2
+            "Resta" -> n1 - n2
+            "Multiplicación" -> n1 * n2
+            "División" -> {
+                if (n2 == 0.0) {
+                    tvResultadoCalc.text = getString(R.string.error_division_cero)
+                    return null
+                }
+                n1 / n2
+            }
+            "Exponente" -> n1.pow(n2)
+            "Raíz cuadrada" -> {
+                if (n1 < 0.0) {
+                    tvResultadoCalc.text = getString(R.string.error_raiz_negativa)
+                    return null
+                }
+                sqrt(n1)
+            }
+            else -> null
+        }
+    }
 
 }
