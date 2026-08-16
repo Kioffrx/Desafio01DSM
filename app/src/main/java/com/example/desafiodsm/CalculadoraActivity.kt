@@ -61,5 +61,45 @@ class CalculadoraActivity : AppCompatActivity() {
             else -> null
         }
     }
+    private fun procesarOperacion() {
+        val texto1 = etNum1.text.toString().trim()
+        if (texto1.isEmpty()) {
+            etNum1.error = getString(R.string.error_campo_vacio)
+            return
+        }
+        val n1 = texto1.toDoubleOrNull()
+        if (n1 == null) {
+            etNum1.error = getString(R.string.error_nota_invalida)
+            return
+        }
+
+        val operacion = spinnerOperacion.selectedItem.toString()
+
+        // Raíz cuadrada solo usa un número
+        var n2 = 0.0
+        if (operacion != "Raíz cuadrada") {
+            val texto2 = etNum2.text.toString().trim()
+            if (texto2.isEmpty()) {
+                etNum2.error = getString(R.string.error_campo_vacio)
+                return
+            }
+            n2 = texto2.toDoubleOrNull() ?: run {
+                etNum2.error = getString(R.string.error_nota_invalida)
+                return
+            }
+        }
+
+        val resultado = operar(operacion, n1, n2) ?: return
+
+        val formato = DecimalFormat("#.####")
+        val resultadoTexto = formato.format(resultado)
+        val linea = if (operacion == "Raíz cuadrada")
+            "√$n1 = $resultadoTexto"
+        else
+            "$n1 $operacion $n2 = $resultadoTexto"
+
+        tvResultadoCalc.text = linea
+        guardarEnHistorial(linea)
+    }
 
 }
