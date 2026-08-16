@@ -43,4 +43,23 @@
     <string name="salario_isss">Descuento ISSS (3%%): $%1$s</string>
     <string name="salario_total_descuentos">Total descuentos: $%1$s</string>
     <string name="salario_neto">Salario neto a pagar: $%1$s</string>
+
+    <!-- Ejercicio 3: Calculadora -->
+    <string name="titulo_calculadora">Calculadora Básica</string>
+    <string name="hint_num1">Número 1</string>
+    <string name="hint_num2">Número 2 (no aplica en raíz cuadrada)</string>
+    <string name="btn_operar">Calcular</string>
+    <string name="error_division_cero">No se puede dividir entre cero</string>
+    <string name="error_raiz_negativa">No se puede calcular raíz de un número negativo</string>
+    <string name="btn_ver_historial">Ver Historial</string>
+
+    <string-array name="operaciones">
+        <item>Suma</item>
+        <item>Resta</item>
+        <item>Multiplicación</item>
+        <item>División</item>
+        <item>Exponente</item>
+        <item>Raíz cuadrada</item>
+    </string-array>
+
 </resources>
