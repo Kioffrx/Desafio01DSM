@@ -28,7 +28,7 @@ class PromedioActivity : AppCompatActivity() {
     private lateinit var etNota5: EditText
     private lateinit var tvResultado: TextView
 
-    private val formatoDecimal = DecimalFormat("#.##")
+    private val formatoDecimal = DecimalFormat("0.00")
     private val notaMinima = 0.0
     private val notaMaxima = 10.0
     private val promedioAprobatorio = 6.0

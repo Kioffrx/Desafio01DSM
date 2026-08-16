@@ -38,6 +38,7 @@ class CalculadoraActivity : AppCompatActivity() {
 
         btnOperar.setOnClickListener { procesarOperacion() }
         btnHistorial.setOnClickListener { mostrarHistorial() }
+
     }
     private fun operar(op: String, n1: Double, n2: Double): Double? {
         return when (op) {
