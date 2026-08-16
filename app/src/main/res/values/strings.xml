@@ -27,4 +27,20 @@
     <string name="notificacion_canal_id">canal_promedio</string>
     <string name="notificacion_canal_nombre">Resultados de promedio</string>
     <string name="notificacion_titulo">Resultado del promedio</string>
+
+    <!-- Ejercicio 2: Descuentos al salario -->
+    <string name="salario_titulo">Descuentos al Salario</string>
+    <string name="salario_hint_nombre">Nombre del empleado</string>
+    <string name="salario_hint_base">Salario base ($)</string>
+    <string name="salario_btn_calcular">Calcular Descuentos</string>
+    <string name="salario_error_nombre">Ingrese el nombre del empleado</string>
+    <string name="salario_error_vacio">Ingrese el salario base</string>
+    <string name="salario_error_negativo">El salario debe ser un valor positivo</string>
+    <string name="salario_resultado_titulo">Detalle de pago de %1$s</string>
+    <string name="salario_bruto">Salario bruto: $%1$s</string>
+    <string name="salario_renta">Descuento Renta: $%1$s</string>
+    <string name="salario_afp">Descuento AFP (7.25%%): $%1$s</string>
+    <string name="salario_isss">Descuento ISSS (3%%): $%1$s</string>
+    <string name="salario_total_descuentos">Total descuentos: $%1$s</string>
+    <string name="salario_neto">Salario neto a pagar: $%1$s</string>
 </resources>
