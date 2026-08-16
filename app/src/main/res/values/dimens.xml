@@ -11,4 +11,12 @@
     <dimen name="text_subtitle">16sp</dimen>
     <dimen name="text_body">14sp</dimen>
     <dimen name="elevation_card">4dp</dimen>
+
+    <!-- Dimens usados en layouts actuales -->
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="margin_medium">16dp</dimen>
+    <dimen name="margin_large">24dp</dimen>
+    <dimen name="text_size_titulo">24sp</dimen>
+    <dimen name="text_size_normal">16sp</dimen>
+    <dimen name="button_height">56dp</dimen>
 </resources>

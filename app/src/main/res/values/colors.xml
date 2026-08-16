@@ -19,6 +19,9 @@
     <color name="success">#22C55E</color>
     <color name="error">#EF4444</color>
     <color name="warning">#F59E0B</color>
+    <!-- Ejercicio 1 (promedio aprobado/reprobado) -->
+    <color name="resultado_aprobado">#22C55E</color>
+    <color name="resultado_reprobado">#EF4444</color>
 
     <!-- Ejercicio 2 (bruto/neto que ya tenías) -->
     <color name="salario_bruto">#22C55E</color>
